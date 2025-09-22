@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apoio Vida+</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Tela de Login -->
+  <div id="login-screen" class="login-screen active">
+    <div class="form-card">
+      <h2>Apoio Vida+</h2>
+      <p>Digite a senha para acessar o sistema</p>
+      <form id="login-form">
+        <input type="password" id="login-pass" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Painel Home -->
+  <section id="home" class="panel">
+    <header>
+      <h1>Apoio Vida+</h1>
+      <p>Cuidando com tecnologia, carinho e atenção</p>
+    </header>
+
+    <div class="grid-actions">
+      <button class="action-btn" data-target="add-patient">Adicionar paciente</button>
+      <button class="action-btn" data-target="add-medication">Adicionar medicação</button>
+      <button class="action-btn" data-target="consult">Consultar</button>
+      <button class="action-btn" data-target="manage">Gerenciar</button>
+    </div>
+
+    <section class="upcoming">
+      <h3>Próximos Horários</h3>
+      <div class="upcoming-card">
+        <ul id="upcoming-list"></ul>
+      </div>
+    </section>
+
+    <footer>
+      Casa de Apoio - Osasco/SP | Projeto Acadêmico
+    </footer>
+  </section>
+
+  <!-- Adicionar Paciente -->
+  <section id="add-patient" class="panel">
+    <div class="form-card">
+      <h2>Adicionar paciente</h2>
+      <form id="patient-form">
+        <label>Nome:</label>
+        <input type="text" id="p-name" required>
+        <label>Idade:</label>
+        <input type="number" id="p-age" required>
+        <button type="submit">Adicionar</button>
+      </form>
+      <button class="ghost" data-target="home">Voltar</button>
+    </div>
+  </section>
+
+  <!-- Adicionar Medicação -->
+  <section id="add-medication" class="panel">
+    <div class="form-card">
+      <h2>Adicionar medicação</h2>
+      <form id="med-form">
+        <label>Medicamento:</label>
+        <input type="text" id="m-name" required>
+        <label>Horário:</label>
+        <input type="time" id="m-time" required>
+        <label>Paciente:</label>
+        <select id="m-patient-select"></select>
+        <button type="submit">Adicionar</button>
+      </form>
+      <button class="ghost" data-target="home">Voltar</button>
+    </div>
+  </section>
+
+  <!-- Consultar -->
+  <section id="consult" class="panel">
+    <div class="form-card">
+      <h2>Consultar</h2>
+      <div class="filters">
+        <input type="text" id="search-id" placeholder="ID...">
+        <input type="text" id="search-name" placeholder="Nome...">
+        <input type="text" id="search-med" placeholder="Medicamento...">
+        <input type="time" id="search-time">
+        <button id="search-btn">🔍</button>
+        <button id="clear-search">Limpar</button>
+      </div>
+
+      <div class="results">
+        <h4>Pacientes encontrados</h4>
+        <table id="results-patients" class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Idade</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <h4>Medicações encontradas</h4>
+        <table id="results-meds" class="data-table">
+          <thead>
+            <tr>
+              <th>Medicamento</th>
+              <th>Horário</th>
+              <th>ID</th>
+              <th>Nome</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <button class="ghost" data-target="home">Voltar</button>
+    </div>
+  </section>
+
+  <!-- Gerenciar -->
+  <section id="manage" class="panel">
+    <div class="form-card">
+      <h2>Gerenciar</h2>
+
+      <h4>Pacientes</h4>
+      <table id="manage-patients" class="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <h4>Medicações</h4>
+      <table id="manage-meds" class="data-table">
+        <thead>
+          <tr>
+            <th>Medicamento</th>
+            <th>Horário</th>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <button class="ghost" data-target="home">Voltar</button>
+    </div>
+  </section>
+
+  <div id="toast-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
