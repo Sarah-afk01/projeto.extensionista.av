@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Apoio Vida — Controle de Medicamentos</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
@@ -91,6 +91,31 @@
   </div>
 
   <footer>Protótipo acadêmico — não utilizar em produção.</footer>
+
+  <!-- Firebase App -->
+<script type="module">
+  // 
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+  import {
+    getFirestore, collection, addDoc, getDocs, onSnapshot,
+    doc, updateDoc, deleteDoc
+  } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
+
+  // 
+  const firebaseConfig = {
+    apiKey: "AIzaSyCKZ7pwGCuD2yAyF8nA59YoPStXTAbqQbQ",
+    authDomain: "extensionistaav.firebaseapp.com",
+    projectId: "extensionistaav",
+    storageBucket: "extensionistaav.firebasestorage.app",
+    messagingSenderId: "762232026491",
+    appId: "1:762232026491:web:122a21e6066ba69218b9de"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  export const db = getFirestore(app);
+</script>
+
   <script src="script.js"></script>
 </body>
+
 </html>
