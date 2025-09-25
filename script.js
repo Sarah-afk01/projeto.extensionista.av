@@ -19,7 +19,7 @@ function downloadJSON(obj, filename) {
 }
 
 // login 
-if (!load("users")) save("users", [{ username: "admin", password: "admin" }]);
+if (!load("users")) save("users", [{ username: "admin", password: "AV2025" }]);
 
 // Elementos 
 const loginScreen = document.getElementById("login-screen");
